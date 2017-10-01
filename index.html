@@ -35,17 +35,167 @@
 
 <body>
 
-	<div class="jumbotron text-center">
-		<h1 class="display-3">Train Scheduler</h1>
+
+<div class="container title">
+   
+	<div class="row">
+		<div class="jumbotron text-center">
+          <h1>Train Scheduler</h1>
+          <p>Find the next train</p>
+        </div>
 	</div>
+	
+
+	<div class="method container table">
+        
+			<div class="panel-heading">
+				<div class="form-title">Current Train Schedule</div>
+			</div>
+
+        <div class="row margin-0 list-header hidden-sm hidden-xs">
+            <div class="col-md-3"><div class="header">Train Name</div></div>
+            <div class="col-md-3"><div class="header">Destination</div></div>
+            <div class="col-md-2"><div class="header">Frequency (min)</div></div>
+            <div class="col-md-2"><div class="header">Next Arrival</div></div>
+            <div class="col-md-2"><div class="header">Minutes Away</div></div>
+        </div>
+
+        <div class="row margin-0">
+            
+            <div class="col-md-3">
+                <div class="cell">
+                    <div class="train-name-row">
+                        Polar Express
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="cell">
+                    <div class="destination-row">
+						North Pole
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-2">
+                <div class="cell">
+                    <div class="frequency-row">
+                        12
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-2">
+                <div class="cell">
+                    <div class="next-arrival-row">
+                        03:42 AM
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-2">
+                <div class="cell">
+                    <div class="minutes-away-row">
+                        12
+                    </div>
+                </div>
+            </div>
+		</div>
+
+		        <div class="row margin-0">
+            
+            <div class="col-md-3">
+                <div class="cell">
+                    <div class="train-name-row">
+                        Polar Express
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="cell">
+                    <div class="destination-row">
+						North Pole
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-2">
+                <div class="cell">
+                    <div class="frequency-row">
+                        12
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-2">
+                <div class="cell">
+                    <div class="next-arrival-row">
+                        03:42 AM
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-2">
+                <div class="cell">
+                    <div class="minutes-away-row">
+                        12
+                    </div>
+                </div>
+            </div>
+		</div>
+
+	</div>
+	<!-- end: method container table -->
+
+
+     
+
+	<br><br>
+
+	<div class="container method add-train">
+
+		<form>
+
+			<div class="panel-heading">
+				<div class="form-title">Add Train</div>
+			</div>
+
+			<br>
+
+			<div class="form-group">
+				<label for="formGroupExampleInput">Train Name</label>
+				<input type="text" class="form-control" id="train-name" placeholder="Polar Express">
+			</div>
+			
+			<div class="form-group">
+				<label for="formGroupExampleInput2">Destination</label>
+				<input type="text" class="form-control" id="destination" placeholder="North Pole">
+			</div>
+
+			<div class="form-group">
+				<label for="formGroupExampleInput2">First Train Time (HH:mm - military time)</label>
+				<input type="text" class="form-control" id="first-train-time" placeholder="03:30">
+			</div>
+			
+			<div class="form-group">
+				<label for="formGroupExampleInput2">Frequency (min)</label>
+				<input type="text" class="form-control" id="frequency" placeholder="12">
+			</div>
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+
+		</form>
+
+	</div>
+	<!-- end add-train -->
 
 
 
 
-
-
-
-
+</div>
+<!-- end container -->
 
 
 
