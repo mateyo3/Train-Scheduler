@@ -6,6 +6,10 @@ https://mateyo3.github.io/Train-Scheduler
 ## Specs
 Users can add trains, desitination, first train time, and frequency to the application. The app will calculate when the next train will arrive in relation to the current time.
 
+## Errors
+1.User input will not populate in Firebase
+2. Calculations for next train will not diaplay
+3. User input will not display in HTML
 
 ## Built With
 HTML, CSS, Javascript, JQuery, JSON, Firebase, Google Fonts, Boostrap
