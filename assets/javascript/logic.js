@@ -31,33 +31,52 @@ $("#add-train-btn").on("click", function(event) {
 	freq = $("#frequency-input").val().trim();
 
 	// object to hold data
-	var newTrain = {
+	dataRef.ref().push({
 		name: trainName,
 		destination: trainDestination,
 		first: firstTrain,
 		frequency: freq,
 		dateAdded: firebase.database.ServerValue.TIMESTAMP
-	};
-
-	// Uploads train data to the database
-	database.ref().push(newTrain);
-
-	console.log("Train Name: " + newTrain.name);
-	console.log("Destination: " + newTrain.destination);
-	console.log("First Train Time: " + newTrain.first);
-	console.log("Frequency (min): " + newTrain.frequency);
-
-	// Clears all of the text-boxes
-	$("#train-name-input").val("");
-	$("#destination-input-input").val("");
-	$("#first-train-input").val("");
-	$("#frequency-input").val("");
-
+	});
 });
+
+// 	// Uploads train data to the database
+// 	database.ref().push(newTrain);
+
+// 	console.log("Train Name: " + newTrain.name);
+// 	console.log("Destination: " + newTrain.destination);
+// 	console.log("First Train Time: " + newTrain.first);
+// 	console.log("Frequency (min): " + newTrain.frequency);
+
+// 	// Clears all of the text-boxes
+// 	$("#train-name-input").val("");
+// 	$("#destination-input-input").val("");
+// 	$("#first-train-input").val("");
+// 	$("#frequency-input").val("");
+
+// });
+
+
+// Create Firebase event for adding train data to the database and a row in the html when a user adds an entry
+	database.ref().on("child_added", function(childSnapshot) {
+
+	console.log(childSnapshot.val());
+
+	// Store everything into a variable.
+	var trainName = childSnapshot.val().name;
+	var trainDestination = childSnapshot.val().destination;
+	var firstTrain = childSnapshot.val().first;
+	var freq = childSnapshot.val().frequency;
+
+	console.log(trainName);
+	console.log(trainDestination);
+	console.log(firstTrain);
+	console.log(freq);
+
 
 
     // Firebase watcher + initial loader HINT: .on("value")
-    database.ref().on("child_added", function(childsnapshot, preChildKey) {
+    database.ref().on("child_added", function(childsnapshot) {
 
       // Log everything that's coming out of snapshot
       console.log(childSnapshot.val());
@@ -106,27 +125,12 @@ $("#add-train-btn").on("click", function(event) {
 
 });
 
-// });
+});
 
 
 
 
-	// Create Firebase event for adding train data to the database and a row in the html when a user adds an entry
-	// database.ref().on("child_added", function(childSnapshot) {
-
-	// console.log(childSnapshot.val());
-
-	// // Store everything into a variable.
-	// var trainName = childSnapshot.val().name;
-	// var trainDestination = childSnapshot.val().destination;
-	// var firstTrain = childSnapshot.val().first;
-	// var freq = childSnapshot.val().frequency;
-
-	// console.log(trainName);
-	// console.log(trainDestination);
-	// console.log(firstTrain);
-	// console.log(freq);
-
+	
 	
 	// });
 // });
