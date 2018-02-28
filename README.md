@@ -7,7 +7,7 @@ https://mateyo3.github.io/Train-Scheduler
 Users can add trains, desitination, first train time, and frequency to the application. The app will calculate when the next train will arrive in relation to the current time.
 
 ## Errors
-1. Next arrival time display
+1. Next arrival time display error in DOM 
 
 
 ## Built With

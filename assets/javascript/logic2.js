@@ -46,10 +46,10 @@ dataRef.ref().on("child_added", function (childSnapshot){
   var firstTrain = childSnapshot.val().firstTrain;
   var frequencyNew = childSnapshot.val().frequency;
 
-  console.log(trainName);
-  console.log(trainDestination);
-  console.log(firstTrain);
-  console.log(frequencyNew);
+  console.log("Train Name: " + trainName);
+  console.log("Train Destination: " + trainDestination);
+  console.log("First Train: " + firstTrain + ":00");
+  console.log("Frequency: " + frequencyNew + " minutes");
 
       //calculate next train time
     var tFrequency = frequencyNew;
@@ -80,8 +80,8 @@ dataRef.ref().on("child_added", function (childSnapshot){
     console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 
     // Next Train
-    var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-    console.log("ARRIVAL TIME: " + moment(nextTrain).format("HH:mm"));
+    var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("HH:mm");
+    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
   // Add each train's data into the table
   $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" + frequencyNew + "</td><td>" + nextTrain + "</td><td>" + tMinutesTillTrain + "</td></tr>");
